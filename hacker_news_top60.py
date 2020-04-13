@@ -35,4 +35,11 @@ def create_custom_hacker_news_list(links, subtext):
     return sort_stories_by_votes(hacker_news_list)
 
 
-pprint.pprint(create_custom_hacker_news_list(top60_links, top60_subtext))
+def output():
+    news_data = (create_custom_hacker_news_list(top60_links, top60_subtext))
+    return news_data
+
+open('output.txt', 'w').write(str(output()) + '\n')
+
+pprint.pprint(create_custom_hacker_news_list(top60_links, top60_subtext)) #for the terminal
+
